@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>Eployrs Profiles</title>
+  <title>Profiles</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Manrope Font -->
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600&display=swap" rel="stylesheet">
-
   <style>
     * {
       box-sizing: border-box;
@@ -15,91 +13,135 @@
 
     body {
       margin: 0;
+      padding: 20px;
       font-family: 'Manrope', sans-serif;
       background: #ffffff;
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      padding: 20px;
     }
 
     .container {
       width: 100%;
       max-width: 420px;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      /* Equal spacing between buttons */
+    }
+
+    /* Main top logo (optional, keeping clean if needed or removing if not requested, but prompt says 'First button: show only Eployrs...', implying the list starts there. 
+       However, usually these pages have a header logo. I will keep the header logo container but if the user wants it gone, they can say so. 
+       Actually, prompt says "First button...", it doesn't explicitly say "Remove header logo". I'll keep it for now but make it look good. */
+    .header-logo {
+      margin-bottom: 40px;
       text-align: center;
     }
 
-    .logo {
-      margin-bottom: 40px;
-    }
-
-    .logo img {
-      width: 180px;
-      max-width: 100%;
+    .header-logo img {
+      max-width: 280px;
+      /* Adjusted width for better visibility */
       height: auto;
     }
 
     .profile-btn {
       position: relative;
-      overflow: hidden;
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       width: 100%;
-      padding: 16px;
-      margin-bottom: 18px;
+      height: 100px;
+      /* Exact same height for ALL buttons */
       text-decoration: none;
-      font-size: 18px;
-      font-weight: 400;                 /* normal text */
+      background: #ffffff;
+      border: 2px solid #004038;
+      border-radius: 20px;
       color: #000;
-      background: #f4f4f4;
-      border-radius: 18px;
-      border: 2px solid #004038;        /* 2px stroke brand color */
-      transition: all 0.15s ease;
-      -webkit-tap-highlight-color: transparent;
+      font-size: 20px;
+      font-weight: 400;
+      transition: all 0.2s ease;
+      cursor: pointer;
     }
 
-    /* Desktop hover */
+    /* Hover Effect */
     .profile-btn:hover {
       background: #004038;
       color: #ffffff;
       transform: translateY(-2px);
     }
 
-    /* Click / Tap */
     .profile-btn:active {
-      background: #004038;
-      color: #ffffff;
-      font-weight: 600;                 /* bold when clicked */
-      transform: scale(0.96);
+      transform: scale(0.98);
     }
 
-    @media (max-width: 480px) {
-      .profile-btn {
-        font-size: 16px;
-        padding: 14px;
-      }
+    /* Icon positioning for text buttons */
+    .btn-icon {
+      position: absolute;
+      left: 30px;
+      /* Fixed distance from left */
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+    }
 
-      .logo img {
-        width: 150px;
-      }
+    /* Logo scaling for logo-only buttons */
+    .btn-logo-center {
+      height: 55%;
+      /* Proportional scaling based on button height */
+      width: auto;
+      object-fit: contain;
+    }
+
+    /* Hover state for icons - icons might need filter change if they are dark. 
+       Assuming icons are PNGs. If they are black, they need to turn white on hover. */
+    .profile-btn:hover .btn-icon,
+    .profile-btn:hover .btn-logo-center {
+      filter: brightness(0) invert(1);
+      /* Turns black/colored icons to white */
+      transition: filter 0.2s ease;
     }
   </style>
 </head>
+
 <body>
 
   <div class="container">
 
-    <div class="logo">
+    <div class="header-logo">
       <img src="EPLOYRS_LOGO.png" alt="Eployrs">
     </div>
 
-    <a class="profile-btn" href="https://www.linkedin.com/company/eployrs/" target="_blank">LinkedIn</a>
-    <a class="profile-btn" href="https://kavishtechnology.com/" target="_blank">Kavish Technology</a>
-    <a class="profile-btn" href="https://linkedin.com/company" target="_blank">Kavish LinkedIn</a>
-    <a class="profile-btn" href="https://eployrs.com" target="_blank">Eployrs</a>
-    <a class="profile-btn" href="https://www.instagram.com/eployrs/" target="_blank">Instagram</a>
+    <!-- 1. Eployrs Logo Only -->
+    <a href="https://eployrs.com" target="_blank" class="profile-btn">
+      <img src="eployrs.png" alt="Eployrs" class="btn-logo-center">
+    </a>
+
+    <!-- 2. LinkedIn (Eployrs) -->
+    <a href="https://www.linkedin.com/company/eployrs/" target="_blank" class="profile-btn">
+      <img src="eployrs-linkdin.png" alt="" class="btn-icon">
+      <span class="btn-text">LinkedIn</span>
+    </a>
+
+    <!-- 3. Instagram (Eployrs) -->
+    <a href="https://www.instagram.com/eployrs/" target="_blank" class="profile-btn">
+      <img src="insta.png" alt="" class="btn-icon">
+      <span class="btn-text">eployrs</span>
+    </a>
+
+    <!-- 4. Kavish Technology Logo Only -->
+    <a href="https://kavishtechnology.com/" target="_blank" class="profile-btn">
+      <img src="Kavish Technology.png" alt="Kavish Technology" class="btn-logo-center">
+    </a>
+
+    <!-- 5. Kavish LinkedIn -->
+    <a href="https://linkedin.com/company" target="_blank" class="profile-btn">
+      <img src="KAVISh-linkdin.png" alt="" class="btn-icon">
+      <span class="btn-text">LinkedIn</span>
+    </a>
 
   </div>
 
 </body>
+
 </html>
