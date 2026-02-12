@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Eployrs Profiles</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Manrope Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Manrope', sans-serif;
+      background: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 420px;
+      text-align: center;
+    }
+
+    .logo {
+      margin-bottom: 40px;
+    }
+
+    .logo img {
+      width: 180px;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .profile-btn {
+      position: relative;
+      overflow: hidden;
+      display: block;
+      width: 100%;
+      padding: 16px;
+      margin-bottom: 18px;
+      text-decoration: none;
+      font-size: 18px;
+      color: #000;
+      background: #f4f4f4;
+      border-radius: 18px;
+      border: 1px solid #ddd;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.8);
+      transition: all 0.15s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Desktop hover */
+    .profile-btn:hover {
+      background: #004038;
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    /* Mobile tap press effect */
+    .profile-btn:active {
+      background: #004038;
+      color: #ffffff;
+      transform: scale(0.96);
+    }
+
+    /* Ripple effect */
+    .profile-btn::after {
+      content: "";
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      background: rgba(255,255,255,0.4);
+      border-radius: 50%;
+      transform: scale(0);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .profile-btn:active::after {
+      transform: scale(3);
+      opacity: 1;
+      transition: 0.4s ease;
+    }
+
+    @media (max-width: 480px) {
+      .profile-btn {
+        font-size: 16px;
+        padding: 14px;
+      }
+
+      .logo img {
+        width: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="logo">
+      <img src="EPLOYRS_LOGO.png" alt="Eployrs">
+    </div>
+
+    <a class="profile-btn" href="https://linkedin.com" target="_blank">LinkedIn</a>
+    <a class="profile-btn" href="https://kavishtechnology.com" target="_blank">Kavish Technology</a>
+    <a class="profile-btn" href="https://linkedin.com/company" target="_blank">LinkedIn LL</a>
+    <a class="profile-btn" href="https://eployrs.com" target="_blank">Eployrs</a>
+    <a class="profile-btn" href="#">Profile 5</a>
+
+  </div>
+
+</body>
+</html>
