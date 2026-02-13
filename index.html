@@ -92,8 +92,8 @@
 
     /* Hover state for icons - icons might need filter change if they are dark. 
        Assuming icons are PNGs. If they are black, they need to turn white on hover. */
-    .profile-btn:hover .btn-icon,
-    .profile-btn:hover .btn-logo-center {
+    .profile-btn:hover .btn-icon:not(.no-invert),
+    .profile-btn:hover .btn-logo-center:not(.no-invert) {
       filter: brightness(0) invert(1);
       /* Turns black/colored icons to white */
       transition: filter 0.2s ease;
@@ -132,9 +132,15 @@
     </a>
 
     <!-- 5. Kavish LinkedIn -->
-    <a href="https://www.linkedin.com/company/kavish-technology-pvt-ltd" target="_blank" class="profile-btn">
+    <a href="https://linkedin.com/company" target="_blank" class="profile-btn">
       <img src="KAVISh-linkdin.png" alt="" class="btn-icon">
       <span class="btn-text">LinkedIn</span>
+    </a>
+
+    <!-- 6. Founder's -->
+    <a href="founders.html" class="profile-btn">
+      <img src="LinkedIn-logo.png" alt="" class="btn-icon no-invert">
+      <span class="btn-text">Founders</span>
     </a>
 
   </div>
